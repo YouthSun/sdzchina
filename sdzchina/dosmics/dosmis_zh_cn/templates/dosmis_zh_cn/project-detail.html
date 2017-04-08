@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dosims</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+	</head>
+	<body>
+		<div class='head'>
+			<div class="title"><a class="title" href="/dosmis_zh_cn/"></a></div>
+			<div class="mid_part">
+				<div class="language">
+					<ul>
+						<li><a id='chinese' href="#"></a></li>
+						<li><a id='english' href="#"></a></li>
+						<li><a id='german' href="#"></a></li>						
+					</ul>
+				</div>
+				<div class='navigation_bar'>
+					<ul>
+						<li><a id='product' href="/dosmis_zh_cn/products">Produkte</a></li>
+						<li><a id='learn' href="/dosmis_zh_cn/learn">Lehre</a></li>
+						<li><a id='edu' href="/dosmis_zh_cn/edu">Schlung</a></li>
+						<li><a id='project' class='activated' href="/dosmis_zh_cn/projects">Projekte</a></li>
+						<li><a id='university' href="/dosmis_zh_cn/about_the_uni">An der Uni</a></li>
+						<li><a id='community' href='/dosmis_zh_cn/community'>Community</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class='right_part'>
+				<ul>
+					<li><a id="login" href="#">Login</a></li>
+					<li><a id="licence" href="#">Lizenz freischalten/Aktivierung</a></li>
+					<form id='search_engine' action="#" method="post">
+						<li class='search_panel'>Suche:
+							<input type='textbox' value='Dein Suchbegriff' />
+							<a id='search_submit' href="#"></a>
+						</li>
+					</form>
+				</ul>
+			</div>
+		</div>
+		<div class='body_panel' style="height:100%;padding-bottom:20px;">
+			{% for detail_model in detail_models %}
+				<div class='uni_name'>
+					<img src="{{ detail_model.show_url }}"></img>
+				</div>
+				<a class="proj_explain" href="{{ detail_model.explain_url }}">Erklären</a>	
+			{% endfor %}
+			<div class='uni_name'>
+				<a class="proj_download" href="{{ detail_model.download_url }}">Modell Download</a>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dosims</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+		<!-- <link rel="stylesheet" type="text/css" href="{% static 'simplePagination.js-master/simplePagination.css' %}"/> -->
+		<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+		<script src="{% static 'simplePagination.js-master/jquery.simplePagination.js' %}"></script>
+		<script type="text/javascript" src='{% static 'js/learn_js.js' %}'></script>
+		<script type="text/javascript" src='{% static 'js/page.js' %}'></script>
+	</head>
+	<body>
+		<div class='head'>
+			<div class="title"><a class="title" href="/dosmis_zh_cn/"></a></div>
+			<div class="mid_part">
+				<div class="language">
+					<ul>
+						<li><a id='chinese' href="#"></a></li>
+						<li><a id='english' href="#"></a></li>
+						<li><a id='german' href="#"></a></li>						
+					</ul>
+				</div>
+				<div class='navigation_bar'>
+					<ul>
+						<li><a id='product' href="/dosmis_zh_cn/products">Produkte</a></li>
+						<li><a id='learn' href="/dosmis_zh_cn/learn">Lehre</a></li>
+						<li><a id='edu' href="/dosmis_zh_cn/edu">Schlung</a></li>
+						<li><a id='project' href="/dosmis_zh_cn/projects">Projekte</a></li>
+						<li><a id='university' href="/dosmis_zh_cn/about_the_uni">An der Uni</a></li>
+						<li><a id='community' class="activated" href='/dosmis_zh_cn/community'>Community</a></li>						
+					</ul>
+				</div>
+			</div>
+			<div class='right_part'>
+				<ul>
+					<li><a id="login" href="#">Login</a></li>
+					<li><a id="licence" href="#">Lizenz freischalten/Aktivierung</a></li>
+					<form id='search_engine' action="#" method="post">
+						<li class='search_panel'>Suche:
+							<input type='textbox' value='Dein Suchbegriff' />
+							<a id='search_submit' href="#"></a>
+						</li>
+					</form>
+				</ul>
+			</div>
+		</div>
+		<div class='community_board'>
+			<div class='community_head'>Questions</div>
+			<div class='questions'>
+			{% for community_model in community_models %}
+				<div class='community_question'>
+					<a href="{% url 'comments' community_model.id %}">{{ community_model.comment_question }}</a>
+					<div style="float:right;">
+						<div class='count'>
+							{{ community_model.replies }} 
+						</div>
+						<div style="font-family:Calibri;">replies</div> 
+					</div>
+					<div style="float:right; margin-right:20px;">
+						<div class='count'>
+							{{ community_model.views }}
+						</div>
+						<div style="font-family:Calibri;"> Views </div>
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+			<div class="pagination" style="clear:left;">
+			</div>
+		</div>
+
+	</body>
+</html>

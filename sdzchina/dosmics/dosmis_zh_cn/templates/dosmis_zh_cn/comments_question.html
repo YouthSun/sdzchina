@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dosims</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+		<!-- <link rel="stylesheet" type="text/css" href="{% static 'simplePagination.js-master/simplePagination.css' %}"/> -->
+		<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+		<script src="{% static 'simplePagination.js-master/jquery.simplePagination.js' %}"></script>
+		<script type="text/javascript" src='{% static 'js/learn_js.js' %}'></script>
+		<script type="text/javascript" src='{% static 'js/page.js' %}'></script>
+	</head>
+	<body>
+		<div class='head'>
+			<div class="title"><a class="title" href="/dosmis_zh_cn/"></a></div>
+			<div class="mid_part">
+				<div class="language">
+					<ul>
+						<li><a id='chinese' href="#"></a></li>
+						<li><a id='english' href="#"></a></li>
+						<li><a id='german' href="#"></a></li>						
+					</ul>
+				</div>
+				<div class='navigation_bar'>
+					<ul>
+						<li><a id='product' href="/dosmis_zh_cn/products">Produkte</a></li>
+						<li><a id='learn' href="/dosmis_zh_cn/learn">Lehre</a></li>
+						<li><a id='edu' href="/dosmis_zh_cn/edu">Schlung</a></li>
+						<li><a id='project' href="/dosmis_zh_cn/projects">Projekte</a></li>
+						<li><a id='university' href="/dosmis_zh_cn/about_the_uni">An der Uni</a></li>
+						<li><a id='community' class="activated" href='/dosmis_zh_cn/community'>Community</a></li>				
+					</ul>
+				</div>
+			</div>
+			<div class='right_part'>
+				<ul>
+					<li><a id="login" href="#">Login</a></li>
+					<li><a id="licence" href="#">Lizenz freischalten/Aktivierung</a></li>
+					<form id='search_engine' action="#" method="post">
+						<li class='search_panel'>Suche:
+							<input type='textbox' value='Dein Suchbegriff' />
+							<a id='search_submit' href="#"></a>
+						</li>
+					</form>
+				</ul>
+			</div>
+		</div>
+		<div class='comment_panel' style='display:block;'>
+			<!-- <div class='info_board' id='comment_board'> -->
+				<div class='comment_question' >Question</div>
+				<div class='comment_detail' >
+					<div class='comment_user'>userid</div>
+					<div class='comment_reply'>This is an example of question</div>
+				</div>
+				<div class='comment_detail' >
+					<div class='comment_user'>userid</div>
+					<div class='comment_reply'>This is an example of reply</div>
+				</div>
+			<!-- </div> -->
+				<div class="pagination">
+<!-- 				  <a href="#" class="first" data-action="first">&laquo;</a>
+				  <a href="#" class="previous" data-action="previous">&lsaquo;</a>
+ 				  <input type="text" readonly="readonly" data-max-page="40" />
+				  <a href="#" class="next" data-action="next">&rsaquo;</a>
+				  <a href="#" class="last" data-action="last">&raquo;</a> -->
+				</div>
+		</div>
+		<div class="user_comment" >
+			Your reply:
+			<form id='comment' method='post' action= "#">
+				<textarea id='comment_text' rows='10' cols='50'></textarea>
+				<a class='comments_submit' href="javascript:;" onclick='commentSubmit'>OK</a>
+			</form>
+		</div>
+	</body>
+</html>

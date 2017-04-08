@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dosims</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+	</head>
+	<body>
+		<div class='head'>
+			<div class="title"><a class="title" href="/dosmis_zh_cn/"></a></div>
+			<div class="mid_part">
+				<div class="language">
+					<ul>
+						<li><a id='chinese' href="#"></a></li>
+						<li><a id='english' href="#"></a></li>
+						<li><a id='german' href="#"></a></li>						
+					</ul>
+				</div>
+				<div class='navigation_bar'>
+					<ul>
+						<li><a id='product' class="activated" href="/dosmis_zh_cn/products">Produkte</a></li>
+						<li><a id='learn' href="/dosmis_zh_cn/learn">Lehre</a></li>
+						<li><a id='edu' href="/dosmis_zh_cn/edu">Schlung</a></li>
+						<li><a id='project' href="/dosmis_zh_cn/projects">Projekte</a></li>
+						<li><a id='university' href="/dosmis_zh_cn/about_the_uni">An der Uni</a></li>
+						<li><a id='community' href='/dosmis_zh_cn/community'>Community</a></li>			
+					</ul>
+				</div>
+			</div>
+			<div class='right_part'>
+				<ul>
+					<li><a id="login" href="#">Login</a></li>
+					<li><a id="licence" href="#">Lizenz freischalten/Aktivierung</a></li>
+					<form id='search_engine' action="#" method="post">
+						<li class='search_panel'>Suche:
+							<input type='textbox' value='Dein Suchbegriff' />
+							<a id='search_submit' href="#"></a>
+						</li>
+					</form>
+				</ul>
+			</div>
+		</div>
+		<div class='body_panel'>
+			<div class='info_board' id='main_board'>
+				<ul class='pro_title' id='pro_title'>
+					<li>Produkttype</li>
+					<li>Inhalt</li>
+					<li>Kosten</li>
+				</ul>
+				<!-- following codes is for further design, for example after adding a database -->
+<!-- 				{% for i in list %}
+					<div>test</div>
+				{% endfor %}
+ -->			
+ 				<!-- following codes is hard-coding for the pre-designed ui-->
+ 				<div class='pro_itemline'>
+ 					<ul class='pro_img'></ul>
+ 					<ul class='pro_first_unit'>„Unternehmen“
+	 					<a class='pro_detail' href="/dosmis_zh_cn/products-corporation">in details</a>	
+ 					</ul>
+ 					<ul class='pro_unit'>
+ 						<li class='pro_describe' id="first_describe">Version „Unternehmen“:</li>
+ 						<li class='pro_describe'>Lizenz für maximal 10 Benutzer</li>
+ 						<li class='pro_describe'>Lizenz mit Dongle</li>
+ 						<li class='pro_describe'>Lehrmaterial</li>
+ 						<li class='pro_describe'>Kostenlose Antworte in Internet</li>
+ 						<li class='pro_describe'>Kostenlose Schulung</li>
+ 					</ul> 
+ 					<ul class='pro_last_unit'>
+ 						<li class='pro_price'>Festpreise:</br>15.000 €</li>
+ 						<a class='buy' href="#">Kostenlos bestellen</a> 						
+ 					</ul> 										
+ 				</div>
+ 				<div class='pro_itemline'>
+ 					<ul class='pro_img'></ul>
+ 					<ul class='pro_first_unit'>„Projekt“
+	 					<a class='pro_detail' href="#">in details</a>
+ 					</ul>
+ 					<ul class='pro_unit'>
+ 						<li class='pro_describe' id="second_describe">Version „Projekt“:</li>
+ 						<li class='pro_describe'>Lizenz für maximal 5 Benutzer</li>
+ 						<li class='pro_describe'>Lizenz mit Dongle</li>
+ 						<li class='pro_describe'>Kostenlose Schulung</li>
+ 					</ul>
+ 					<ul class='pro_last_unit'>
+ 						<li class='pro_price'>Festpreise:</br>10.000 €</li>
+ 						<a class='buy' href="#">Kostenlos bestellen</a>
+ 					</ul> 					
+ 				</div>
+ 				<div class='pro_itemline'>
+ 					<ul class='pro_img'></ul>
+ 					<ul class='pro_first_unit'>„Lehrer“
+	 					<a class='pro_detail' href="#">in details</a>
+ 					</ul>
+ 					<ul class='pro_unit'>
+ 						<li class='pro_describe' id="third_describe">Version „Lehrer“:</li>
+ 						<li class='pro_describe'>Lizenz für maximal 1 Benutzer</li>
+ 						<li class='pro_describe'>Lizenz mit Dongle</li>
+ 						<li class='pro_describe'>Kostenlose Vorlesung an der Uni</li>
+ 					</ul>
+ 					<ul class='pro_last_unit'>
+ 						<li class='pro_price'>Festpreise:</br>5.000 €</li>
+ 						<a class='buy' href="#">Kostenlos bestellen</a>
+ 					</ul> 					
+ 				</div>
+ 				<div class='pro_itemline'>
+ 					<ul class='pro_img'></ul>
+ 					<ul class='pro_first_unit'>„Basic“
+	  					<a class='pro_detail' href="#">in details</a>					
+ 					</ul>
+ 					<ul class='pro_unit'>
+ 						<li class='pro_describe' id="fourth_describe">Version „Basic“:</li>
+ 						<li class='pro_describe'>Lizenz für maximal 1 Benutzer</li>
+ 						<li class='pro_describe'>Lizenz mit Dongle</li>
+ 					</ul>
+ 					<ul class='pro_last_unit'>
+ 						<li class='pro_price'>In Monat:</br>100 €</li>
+ 						<a class='buy' href="#">Kostenlos bestellen</a>
+ 					</ul> 					
+ 				</div>
+			</div>
+		</div>
+	</body>
+</html>

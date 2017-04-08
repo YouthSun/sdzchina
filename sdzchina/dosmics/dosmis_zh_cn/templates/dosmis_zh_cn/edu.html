@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dosims</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+		<script type="text/javascript" src='{% static 'js/learn_js.js' %}'></script>		
+		<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>		
+	</head>
+	<body>
+		<div class='head'>
+			<div class="title"><a class="title" href="/dosmis_zh_cn/"></a></div>
+			<div class="mid_part">
+				<div class="language">
+					<ul>
+						<li><a id='chinese' href="#"></a></li>
+						<li><a id='english' href="#"></a></li>
+						<li><a id='german' href="#"></a></li>						
+					</ul>
+				</div>
+				<div class='navigation_bar'>
+					<ul>
+						<li><a id='product' href="/dosmis_zh_cn/products">Produkte</a></li>
+						<li><a id='learn' href="/dosmis_zh_cn/learn">Lehre</a></li>
+						<li><a id='control' class="activated" href="/dosmis_zh_cn/control">Schlung</a></li>
+						<li><a id='project' href="/dosmis_zh_cn/projects">Projekte</a></li>
+						<li><a id='university' href="/dosmis_zh_cn/about_the_uni">An der Uni</a></li>
+						<li><a id='community' href='/dosmis_zh_cn/community'>Community</a></li>				
+					</ul>
+				</div>
+			</div>
+			<div class='right_part'>
+				<ul>
+					<li><a id="login" href="#">Login</a></li>
+					<li><a id="licence" href="#">Lizenz freischalten/Aktivierung</a></li>
+					<form id='search_engine' action="#" method="post">
+						<li class='search_panel'>Suche:
+							<input type='textbox' value='Dein Suchbegriff' />
+							<a id='search_submit' href="#"></a>
+						</li>
+					</form>
+				</ul>
+			</div>
+		</div>
+		<div class='body_panel'>
+			<div class='info_board' id='main_board'>
+				<div id='book_part'>
+					<div class='book_head'>书本列表</div>
+						{% for edu_model in Edu_models %}
+						<div class='book_list'>
+							<div class='book_cover' style='background:url({{ edu_model.book_cover }}) no-repeat;' id='book_price_{{ edu_model.id }}'></div>
+							<div class='book_name' id='book_name_{{ edu_model.id}}'>{{ edu_model.book_name }}</div>
+							<div class='price_and_link'>
+								<div class='book_price' id='book_price_{{ edu_model.id }}'>{{ edu_model.book_price }}€</div>
+								<a class='book_download_link' id='book_download_{{ edu_model.id }}' href="{{ edu_model.book_download }}" download='{{ edu_model.book_name }}'>Kostenlos Download</a>
+							</div>
+						</div>
+						{% endfor %}
+						<a id='more_book_link' href='#'>Weitere Bücher</a>
+					<div id='edu_schedule' onclick="SchedulePanel()">Schulung</div>
+				</div>
+				<div id='schedule_table'>
+					<div id='table_part'>
+					{% for calendar_model in Calendar_models %}
+						<div class='square' style='background-color:{{ calendar_model.schedule }}; width:{{ calendar_model.width }}px;color:{{ calendar_model.color}}'>{{ calendar_model.daytime }}</div>
+					{% endfor %}
+					</div>
+					<div id='schedule_introduction'>
+					</div>
+					<a id='edu_book_link' href="#">Jetzt Buchen</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
